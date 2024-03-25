@@ -22,11 +22,12 @@ def my_add(data):
 
 def my_links(data):
     description = input('Введіть назву:\n')
+    found = False
     for item in data:
-        try:
-            if item['description'] == description:
-                print(f"Знайдено посилання: {item['link']}")
-        except:
-            print('Посилання з такою назвою не знайдено.')
-
+        while item['description'] == description:
+            print(f"Знайдено посилання: {item['link']}")
+            found = True
+            break
+    if not found:
+        print('Посилання з такою назвою не знайдено.')
 
